@@ -43,19 +43,18 @@ public class UserTypeView
         {   
             Console.Clear();
             RegisterUserView.LoginOrRegisterUser();
-        }
-
-        if (option == "admin")
+        }else if (option == "admin")
         {
             Console.Clear();
             RegisterAdminView.LoginOrRegisterAdmin();
+        }else
+        {
+            Console.WriteLine("Valor incorreto. Insira novamente.");
+            Console.ReadKey();
+            Console.Clear();
+            ShowEntryScreen();
         }
 
-        Console.WriteLine("Valor incorreto. Insira novamente.");
-        Console.ReadKey();
-        Console.Clear();
-        ShowEntryScreen();
-
-        return "400";
+        return "";
     }
 }
