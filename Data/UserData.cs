@@ -1,6 +1,5 @@
 using Dapper;
 using MySql.Data.MySqlClient;
-using AppEntry;
 using Models;
 
 namespace Data;
@@ -14,9 +13,9 @@ public class UserData
             using (var connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                var parameterRegisterName = userRegister.userName;
-                var parameterRegiterEmail = userRegister.userEmail;
-                var parameterRegisterPassword = userRegister.userPassword;
+                var userParameterRegisterName = userRegister.userName;
+                var userParameterRegiterEmail = userRegister.userEmail;
+                var userParameterRegisterPassword = userRegister.userPassword;
             }   
         }
         return userRegister;
@@ -29,9 +28,9 @@ public class UserData
             using (var connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                var parameterLoginName = userLogin.userName;
-                var parameterLoginEmail = userLogin.userEmail;
-                var parameterLoginPassword = userLogin.userPassword;
+                var userParameterLoginName = userLogin.userName;
+                var userParameterLoginEmail = userLogin.userEmail;
+                var userParameterLoginPassword = userLogin.userPassword;
             }   
         }
 

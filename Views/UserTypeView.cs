@@ -37,13 +37,15 @@ public class UserTypeView
 
     public static string HandlerOption(string option)
     {   
-        option.ToLower();
+        string lowerOption = option.ToLower();
+
+        Console.WriteLine(lowerOption);
         
-        if (option == "user")
+        if (lowerOption == "user")
         {   
             Console.Clear();
             RegisterUserView.LoginOrRegisterUser();
-        }else if (option == "admin")
+        }else if (lowerOption == "admin")
         {
             Console.Clear();
             RegisterAdminView.LoginOrRegisterAdmin();

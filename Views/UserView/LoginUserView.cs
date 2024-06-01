@@ -71,7 +71,7 @@ public class LoginUserView
         string userEmail = Console.ReadLine();
 
         Console.Write("Senha: ");
-        int userPassword = int.Parse(Console.ReadLine());
+        string userPassword = Console.ReadLine();
 
         UserLoginModel userLogin = new UserLoginModel(userName, userEmail, userPassword);
 

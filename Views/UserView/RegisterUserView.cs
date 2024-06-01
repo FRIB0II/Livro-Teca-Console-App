@@ -16,7 +16,7 @@ public class RegisterUserView
         Console.WriteLine("------------------------------");
         Console.WriteLine("Cadastre-se na Livro Teca.");
         Console.WriteLine("Caso já tenha uma conta aperte 1.");
-        Console.WriteLine("Caso contrário aperte 2 para cadastrar.");
+        Console.WriteLine("Caso contrário aperte 2 para se cadastrar.");
         Console.WriteLine("------------------------------");
 
         Console.WriteLine("");
@@ -71,7 +71,7 @@ public class RegisterUserView
         string userEmail = Console.ReadLine();
 
         Console.Write("Senha: ");
-        int userPassword = int.Parse(Console.ReadLine());
+        string userPassword = Console.ReadLine();
 
         UserRegisterModel userRegister = new UserRegisterModel(userName, userEmail, userPassword);
 
