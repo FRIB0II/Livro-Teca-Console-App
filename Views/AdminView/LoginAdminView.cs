@@ -15,7 +15,9 @@ public class LoginAdminView
         
         Console.WriteLine("------------------------------");
         Console.WriteLine("Entre na Livro Teca como administrador.");
+        Console.WriteLine("");
         Console.WriteLine("Caso não tenha uma conta aperte 1.");
+        Console.WriteLine("");
         Console.WriteLine("Caso contrário aperte 2 para entrar em uma conta existente.");
         Console.WriteLine("------------------------------");
 

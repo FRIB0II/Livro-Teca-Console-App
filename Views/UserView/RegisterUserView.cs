@@ -15,7 +15,9 @@ public class RegisterUserView
         
         Console.WriteLine("------------------------------");
         Console.WriteLine("Cadastre-se na Livro Teca.");
+        Console.WriteLine("");
         Console.WriteLine("Caso já tenha uma conta aperte 1.");
+        Console.WriteLine("");
         Console.WriteLine("Caso contrário aperte 2 para se cadastrar.");
         Console.WriteLine("------------------------------");
 
@@ -73,8 +75,20 @@ public class RegisterUserView
         Console.Write("Senha: ");
         string userPassword = Console.ReadLine();
 
-        UserRegisterModel userRegister = new UserRegisterModel(userName, userEmail, userPassword);
-
-        UserData.UserRegisterData(userRegister);
+        if(string.IsNullOrEmpty(userName) ||
+            string.IsNullOrEmpty(userEmail) ||
+            string.IsNullOrEmpty(userPassword))
+        {
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Os valores não podem estar vazios. Digite novamente.");
+            Console.ReadKey();
+            Console.Clear();
+            RegisterUser();
+        }
+        else
+        {
+            UserRegisterModel userRegister = new UserRegisterModel(userName, userEmail, userPassword);
+            UserData.UserRegisterData(userRegister);
+        }
     }
 }

@@ -12,10 +12,12 @@ public class LoginUserView
         Console.WriteLine("------------------------------");
 
         Console.WriteLine("");
-        
+
         Console.WriteLine("------------------------------");
         Console.WriteLine("Entre na Livro Teca.");
+        Console.WriteLine("");
         Console.WriteLine("Caso não tenha uma conta aperte 1.");
+        Console.WriteLine("");
         Console.WriteLine("Caso contrário aperte 2 para entrar em uma conta existente.");
         Console.WriteLine("------------------------------");
 
@@ -25,14 +27,14 @@ public class LoginUserView
     }
 
     public static short HandlerOption(short option)
-    {   
+    {
         switch (option)
         {
             case 1:
                 Console.Clear();
                 RegisterUserView.LoginOrRegisterUser();
                 break;
-            
+
             case 2:
                 Console.Clear();
                 LoginUser();
@@ -56,16 +58,12 @@ public class LoginUserView
         Console.WriteLine("------------------------------");
 
         Console.WriteLine("");
-        
+
         Console.WriteLine("------------------------------");
         Console.WriteLine("Por favor informe os seguintes dados:");
-        Console.WriteLine("Nome");
         Console.WriteLine("Email");
         Console.WriteLine("Senha");
         Console.WriteLine("------------------------------");
-        
-        Console.Write("Nome: ");
-        string userName = Console.ReadLine();
 
         Console.Write("Email: ");
         string userEmail = Console.ReadLine();
@@ -73,8 +71,18 @@ public class LoginUserView
         Console.Write("Senha: ");
         string userPassword = Console.ReadLine();
 
-        UserLoginModel userLogin = new UserLoginModel(userName, userEmail, userPassword);
-
-        UserData.UserLoginData(userLogin);
+        if(string.IsNullOrEmpty(userEmail) || string.IsNullOrEmpty(userPassword))
+        {
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Os valores não podem estar vazios. Digite novamente.");
+            Console.ReadKey();
+            Console.Clear();
+            LoginUser();
+        }
+        else
+        {   
+            UserLoginModel userLogin = new UserLoginModel(userEmail, userPassword);
+            UserData.UserLoginData(userLogin);
+        }
     }
 }

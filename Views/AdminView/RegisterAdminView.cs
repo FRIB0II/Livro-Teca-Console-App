@@ -15,7 +15,9 @@ public class RegisterAdminView
         
         Console.WriteLine("------------------------------");
         Console.WriteLine("Cadastre-se na Livro Teca como administrador.");
+        Console.WriteLine("");
         Console.WriteLine("Caso já tenha uma conta aperte 1.");
+        Console.WriteLine("");
         Console.WriteLine("Caso contrário aperte 2 para se cadastrar.");
         Console.WriteLine("------------------------------");
 

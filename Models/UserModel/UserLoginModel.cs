@@ -2,13 +2,15 @@ namespace Models;
 
 public class UserLoginModel
 {
-    public string userName { get; set; }
     public string userEmail { get; set; }
     public string userPassword { get; set; }
 
-    public UserLoginModel(string userNameEntry, string userEmailEntry, string userPasswordEntry)
+    public UserLoginModel()
     {
-        userName = userNameEntry;
+    }
+
+    public UserLoginModel(string userEmailEntry, string userPasswordEntry)
+    {
         userEmail = userEmailEntry;
         userPassword = userPasswordEntry;
     }
